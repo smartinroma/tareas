@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do's List</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+
+    <div class="hero">
+        <h1>TO DO LIST</h1>
+    </div>
+
+    <main>
+        <div class="contenedor">
+            <div id="agregar">
+                <form action="">
+                    <input type="text" placeholder="Nombre de tarea" id="tarea">
+                    <select id="tipoTarea">
+                        <option value="1">Urgente</option>
+                        <option value="2">Diaria</option>
+                        <option value="3">Mensual</option>
+                    </select>
+                    <input type="submit" value="Guardar" id="btnGuardar">
+                </form>
+            </div>
+
+            <div id="buscar">
+                <form action="">
+                    <select id="bucarTipoTarea">
+                        <option value="1">Urgente</option>
+                        <option value="2">Diaria</option>
+                        <option value="3">Mensual</option>
+                    </select>
+                    <input type="text" id="tareaBuscada">
+                </form>
+            </div>
+
+
+            <section id="tareas">
+                <!--  <article>
+                    <h3>Tarea</h3>
+                    <p>Eliminar</p>
+                </article> -->
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script src="js/funciones.js"></script>
+    <script src="js/eventos.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: bisque;
+}
+
+.hero {
+    background-image: url('../images/cuaderno.jpg');
+    background-position: center;
+    background-blend-mode: multiply;
+    background-color: lightgray;
+    background-size: cover;
+    background-position: center;
+    padding: 10% 10px;
+
+}
+
+.hero h1{
+    font-family: 'Sansita Swashed', cursive;
+    text-align: center;
+    font-size: 5em;
+}
+
+main{
+    margin-top: 30px;
+}
+
+main .contenedor{
+    width: 80%;
+    background-color: bisque;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+}
+
+main .contenedor #agregar{
+    padding: 15px 0;
+    background-color: antiquewhite;
+}
+
+main .contenedor #buscar{
+    padding: 15px 0;
+    background-color: beige;
+}
