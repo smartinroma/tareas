@@ -23,8 +23,9 @@
         <div class="contenedor">
             <div id="agregar">
                 <form action="">
+                    <label>Agregar Tarea</label>
                     <input type="text" placeholder="Nombre de tarea" id="tarea">
-                    <select id="tipoTarea">
+                    <select id="prioridad">
                         <option value="1">Urgente</option>
                         <option value="2">Diaria</option>
                         <option value="3">Mensual</option>
@@ -35,12 +36,14 @@
 
             <div id="buscar">
                 <form action="">
-                    <select id="bucarTipoTarea">
-                        <option value="1">Urgente</option>
-                        <option value="2">Diaria</option>
-                        <option value="3">Mensual</option>
-                    </select>
+                    <label>Buscar Tarea</label>
                     <input type="text" id="tareaBuscada">
+                    <select id="bucarTipoTarea">
+                        <option value="1" class="urgente">Urgente</option>
+                        <option value="2" class="diario">Diaria</option>
+                        <option value="3" class="mensual">Mensual</option>
+                    </select>
+
                 </form>
             </div>
 
@@ -48,9 +51,7 @@
             <section id="seccionTareas">
                 <!--  <article>
                     <h3>Tarea</h3>
-                    <p>Eliminar
-                        <i class="fas fa-trash-alt"></i>
-                    </p>
+                    <input></input>
                 </article> -->
             </section>
 

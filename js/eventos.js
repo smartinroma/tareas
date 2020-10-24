@@ -1,25 +1,43 @@
-/* let agregarTarea = document.querySelector('#tarea');
-let tipoTarea = document.querySelector('#tipoTarea');
+let agregarTarea = document.querySelector('#tarea');
+let prioridad = document.querySelector('#prioridad');
 let btnGuardar = document.querySelector('#btnGuardar');
 let buscarTipoTarea = document.querySelector('#buscarTipoTarea');
-let tareaBuscada = document.querySelector('#tareaBuscada'); */
+let tareaBuscada = document.querySelector('#tareaBuscada');
 let seccionTareas = document.querySelector('#seccionTareas');
 
+let eliminar = document.querySelector('#deleteTarea');
 
-/* /* agregarTarea.addEventListener('input', agregarTarea);
 
-function agregarTarea(event) {
-    let tareaAgregada = event.target.value.trim();
-    for (let tarea of listaTareas) {
-        listaTareas.push(tarea.nombreTarea);
+agregarTarea.addEventListener('input', addTarea);
+prioridad.addEventListener('change', addTarea);
+btnGuardar.addEventListener('click', addTarea);
+
+
+function addTarea(event) {
+
+    event.preventDefault();
+    let tareaAgregada = agregarTarea.value;
+    let prioridadTarea = prioridad.value;
+
+    let nuevaTarea = {
+        nombreTarea: tareaAgregada,
+        prioridad: prioridadTarea
     }
+    listaTareas.push(nuevaTarea);
 
-    /*  tareaBuscada.forEach(nombreTarea => {
-         listaTareas.innerHTML += `<article>
-     <h3>${nombreTarea}</h3>
-     <p>Eliminar
-         <i class="fas fa-trash-alt"></i>
-     </p>
- </article>`
-     });
-}  */
+    console.log(listaTareas);
+
+    pintarOneTarea(nuevaTarea, seccionTareas);
+
+}
+
+eliminar.addEventListener('click', eliminarTarea);
+
+
+function eliminarTarea(event) {
+    event.preventDefault();
+    remonveItemFromArr(listaTareas, elimunar)
+
+    pintarOneTarea(listaTareas, seccionTareas)//borrar tarea
+}
+

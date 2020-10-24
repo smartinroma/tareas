@@ -36,16 +36,65 @@ main .contenedor{
     width: 80%;
     background-color: bisque;
     margin: 0 auto;
-    padding: 5px;
+    padding: 15px;
     text-align: center;
 }
 
 main .contenedor #agregar{
-    padding: 15px 0;
+    padding: 15px;
     background-color: antiquewhite;
+    width: 100%;
+    border-radius: 10px;
+    font-family: 'Sansita Swashed', cursive;
 }
 
-main .contenedor #buscar{
-    padding: 15px 0;
-    background-color: beige;
+main .contenedor #agregar input, main .contenedor #agregar select{
+    margin-left: 20px;
 }
+
+
+main .contenedor #buscar{
+    padding: 15px;
+    background-color: beige;
+    width: 100%;
+    border-radius: 10px;
+    font-family: 'Sansita Swashed', cursive;
+}
+
+main .contenedor #buscar input, main .contenedor #buscar select{
+    margin-left: 20px;
+}
+
+main .contenedor #seccionTareas {
+    width: 100%;
+    margin-top: 60px;
+}
+
+.rojo{
+    background-color: red;
+}
+
+.amarillo{
+    background-color: yellow;
+}
+
+.verde{
+    background-color: green;
+}
+
+main .contenedor #seccionTareas article{
+    margin: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+main .contenedor #seccionTareas article input{
+    margin-left: 150px;
+}
+
+
+
+
