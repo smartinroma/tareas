@@ -91,8 +91,17 @@ main .contenedor #seccionTareas article{
     border-radius: 10px;
 }
 
-main .contenedor #seccionTareas article input{
+main .contenedor #seccionTareas article button{
     margin-left: 150px;
+    text-decoration: none;
+    width: 80px;
+    height: 30px;
+    border: 1px;
+    text-align: center;
+    padding: 5px;
+    background-color: lightcyan;
+    border-radius: 20px;
+    color: black;
 }
 
 

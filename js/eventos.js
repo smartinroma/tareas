@@ -5,11 +5,10 @@ let buscarTipoTarea = document.querySelector('#buscarTipoTarea');
 let tareaBuscada = document.querySelector('#tareaBuscada');
 let seccionTareas = document.querySelector('#seccionTareas');
 
-let eliminar = document.querySelector('#deleteTarea');
 
 
-agregarTarea.addEventListener('input', addTarea);
-prioridad.addEventListener('change', addTarea);
+
+
 btnGuardar.addEventListener('click', addTarea);
 
 
@@ -31,13 +30,26 @@ function addTarea(event) {
 
 }
 
-eliminar.addEventListener('click', eliminarTarea);
+//eliminar.addEventListener('click', eliminarTarea);
 
 
-function eliminarTarea(event) {
-    event.preventDefault();
-    remonveItemFromArr(listaTareas, elimunar)
+tareaBuscada.addEventListener('input', recogerBusquedaPalabra)
 
-    pintarOneTarea(listaTareas, seccionTareas)//borrar tarea
+function recogerBusquedaPalabra(event) {
+    let palabraBuscada = event.target.value.trim();
+
+    let listaFiltrada = filtrarPorPalabra(listaTareas, palabraBuscada)
+
+    pintarTareas(listaFiltrada, seccionTareas)
 }
 
+
+/* buscarTipoTarea.addEventListener('change', recogerBusquedaPrioridad)
+
+function recogerBusquedaPrioridad(event) {
+    let prioridadBuscada = event.target;
+
+    let listaFiltrada = filtrarPorPrioridad(listaTareas, prioridadBuscada);
+
+    pintarTareas(listaFiltrada, seccionTareas)
+} */

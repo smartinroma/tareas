@@ -1,45 +1,45 @@
 
 
+function pintarTareas(pListaTareas, pSection) {
+
+    pSection.innerHTML = ''
+
+    pListaTareas.forEach(tarea => {
+        pintarOneTarea(tarea, pSection)
+    })
+}
+
+
 function pintarOneTarea(pTarea, pSeccion) {
     let article = document.createElement('article');
     let h3 = document.createElement('h3');
-    let input = document.createElement('input');
-    input.setAttribute('type', 'button');
-    input.value = 'Eliminar';
-    input.id = 'deleteTarea';
+
+    let eliminar = document.createElement('button')
+    eliminar.addEventListener('click', eliminarTarea)
+    eliminar.innerText = 'Eliminar';
+    eliminar.dataset.id = 'Eliminar';
 
     let contenidoh3 = document.createTextNode(`${pTarea.nombreTarea}`);
     h3.appendChild(contenidoh3);
 
 
     article.appendChild(h3);
-    article.appendChild(input);
+    article.appendChild(eliminar);
 
     pSeccion.appendChild(article);
 
     //hacer un if para cambiar las clases del article en funcion del color de la prioridad, classList, className
-    /*  let urgente = document.querySelector('.urgente');
-     let diaria = document.querySelector('.diaria');
-     let mensual = document.querySelector('.mensual'); */
+    let prioridadTarea = prioridad.value;
 
-
-
-    if (prioridad = 'urgente') {
+    if (prioridadTarea == 1) {
         article.classList.add('rojo')
-    } else if (prioridad = 'diaria') {
+    } else if (prioridadTarea == 2) {
         article.classList.add('amarillo');
-    } else {
+    } else if (prioridadTarea == 3) {
         article.classList.add('verde');
     }
 }
 
-
-function pintarTareas(pListaTareas, pSection) {
-
-    pListaTareas.forEach(tarea => {
-        pintarOneTarea(tarea, pSection)
-    })
-}
 
 
 function filtrarPorPrioridad(pListaTareas, pPrioridad) {
@@ -50,6 +50,28 @@ function filtrarPorPrioridad(pListaTareas, pPrioridad) {
     return arrayResultado
 }
 
+function filtrarPorPalabra(pListaTareas, pPalabra) {
+    const listraFiltrada = pListaTareas.filter(tarea => {
+        let nombre = tarea.nombreTarea;
+        return nombre.toLowerCase().includes(pPalabra.toLowerCase());
+    })
+
+    return listraFiltrada
+}
 
 
-pintarTareas(listaTareas, seccionTareas)
+function eliminarTarea(event) {
+    event.preventDefault();
+
+    let idBorrar = event.target.dataset.id;
+
+    let posicion = listaTareas.findIndex(tarea => tarea.id == idBorrar);
+
+    listaTareas.splice(posicion, 1);
+
+
+    pintarTareas(listaTareas, seccionTareas)//borrar tarea
+}
+
+
+//pintarTareas(listaTareas, seccionTareas)
