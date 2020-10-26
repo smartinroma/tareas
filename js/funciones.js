@@ -70,7 +70,7 @@ function eliminarTarea(event) {
     listaTareas.splice(posicion, 1);
 
 
-    pintarTareas(listaTareas, seccionTareas)//borrar tarea
+    //pintarTareas(listaTareas, seccionTareas)//borrar tarea
 }
 
 
